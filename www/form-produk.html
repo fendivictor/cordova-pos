@@ -35,7 +35,7 @@
   <div id="appCapsule">
     <div class="section full">
       <div class="wide-block pb-1 pt-2">
-        <form>
+        <form action="#" autocomplete="off" class="needs-validation" novalidate>
           <div class="form-group basic animated">
             <div class="input-wrapper">
               <label class="label" for="kode">Kode Barang <span class="text-danger">*</span></label>
@@ -43,56 +43,68 @@
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Kode Barang</div>
             </div>
           </div>
 
           <div class="form-group basic animated">
             <div class="input-wrapper">
               <label class="label" for="nama">Nama Barang</label>
-              <input type="text" class="form-control" id="nama" placeholder="Nama Barang">
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Barang" required>
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Nama Barang</div>
             </div>
           </div>
 
           <div class="form-group basic animated">
             <div class="input-wrapper">
-              <label class="label" for="harga">Kategori</label>
-              <input type="text" class="form-control" id="harga" placeholder="Kategori">
+              <label class="label" for="kategori">Kategori</label>
+              <select name="kategori" id="kategori" class="form-control" required></select>
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Kategori Barang</div>
             </div>
           </div>
 
           <div class="form-group basic animated">
             <div class="input-wrapper">
-              <label class="label" for="harga">Harga Beli</label>
-              <input type="text" class="form-control" id="harga" placeholder="Harga Beli">
+              <label class="label" for="harga_beli">Harga Beli</label>
+              <input type="text" class="form-control" id="harga_beli" name="harga_beli" placeholder="Harga Beli" required>
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Harga Beli</div>
             </div>
           </div>
 
           <div class="form-group basic animated">
             <div class="input-wrapper">
-              <label class="label" for="harga">Harga Jual</label>
-              <input type="text" class="form-control" id="harga" placeholder="Harga Jual">
+              <label class="label" for="harga_jual">Harga Jual</label>
+              <input type="text" class="form-control" id="harga_jual" name="harga_jual" placeholder="Harga Jual" required>
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Harga Jual</div>
             </div>
           </div>
 
           <div class="form-group basic animated">
             <div class="input-wrapper">
-              <label class="label" for="harga">Satuan</label>
-              <input type="text" class="form-control" id="harga" placeholder="Satuan">
+              <label class="label" for="satuan">Satuan</label>
+              <select name="satuan" id="satuan" class="form-control" required></select>
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Satuan</div>
             </div>
           </div>
 
@@ -140,6 +152,29 @@
     </div>
   </div>
   <!-- * Dialog Basic -->
+
+  <!-- DialogIconedDanger -->
+  <div class="modal fade dialogbox" id="DialogIconedDanger" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-icon text-danger">
+          <ion-icon name="close-circle"></ion-icon>
+        </div>
+        <div class="modal-header">
+          <h5 class="modal-title">Error</h5>
+        </div>
+        <div class="modal-body">
+          <span id="error-message"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn" data-dismiss="modal">CLOSE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * DialogIconedDanger -->
 
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>

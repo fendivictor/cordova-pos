@@ -28,11 +28,6 @@
     <div class="pageTitle">
       Master Produk
     </div>
-    <div class="right">
-      <a href="form-produk.html" class="headerButton">
-        <ion-icon name="add-circle-outline"></ion-icon>
-      </a>
-    </div>
   </div>
   <!-- * App Header -->
 
@@ -40,6 +35,17 @@
   <div id="appCapsule">
     <div class="header-large-title mt-3">
       <h1 class="title">Master Produk</h1>
+    </div>
+    <div class="section full mt-2">
+      <ul class="listview link-listview">
+        <li><a href="#">Link Item 1</a></li>
+      </ul>
+    </div>
+
+    <div class="fab-button animate bottom-right dropdown">
+      <a href="form-produk.html" class="fab">
+        <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+      </a>
     </div>
   </div>
   <!-- * App Capsule -->
@@ -72,6 +78,100 @@
     </div>
   </div>
   <!-- * Dialog Basic -->
+
+  <div class="modal fade action-sheet" id="actionSheet" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Action
+          </h5>
+        </div>
+        <div class="modal-body">
+          <ul class="action-button-list">
+            <li>
+              <a href="#" class="btn btn-list btn-edit" data-dismiss="modal">
+                <span>
+                  <ion-icon name="create-outline"></ion-icon>
+                  Edit
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-list btn-delete" data-dismiss="modal">
+                <span>
+                  <ion-icon name="trash-outline"></ion-icon>
+                  Delete
+                </span>
+              </a>
+            </li>
+            <li class="action-divider"></li>
+            <li>
+              <a href="#" class="btn btn-list text-danger" data-dismiss="modal">
+                <span>
+                  <ion-icon name="close-outline"></ion-icon>
+                  Close
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog Basic -->
+  <div class="modal fade dialogbox" id="modalDelete" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hapus Data</h5>
+        </div>
+        <div class="modal-body">
+          Apakah yakin akan menghapus data ?
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn btn-text-secondary" data-dismiss="modal">Tidak</a>
+            <a href="#" class="btn btn-text-primary" id="btn-confirm-delete">Ya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Dialog Basic -->
+
+  <!-- DialogIconedDanger -->
+  <div class="modal fade dialogbox" id="DialogIconedDanger" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-icon text-danger">
+          <ion-icon name="close-circle"></ion-icon>
+        </div>
+        <div class="modal-header">
+          <h5 class="modal-title">Error</h5>
+        </div>
+        <div class="modal-body">
+          <span id="error-message"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn" data-dismiss="modal">CLOSE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * DialogIconedDanger -->
+
+  <div id="toast-success" class="toast-box toast-top bg-success">
+    <div class="in">
+      <div id="success-text" class="text">
+          Success Color
+      </div>
+    </div>
+    <button type="button" class="btn btn-sm btn-text-light close-button">OK</button>
+  </div>
 
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
