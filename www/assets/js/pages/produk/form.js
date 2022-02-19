@@ -69,6 +69,7 @@ const formProduk = {
           return false;
         }
 
+        $("#kode").attr("readonly", true);
         $("#kode").val(data.response.kode);
         $("#nama").val(data.response.nama);
         $("#kategori").val(data.response.id_kategori).trigger("change");

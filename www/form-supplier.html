@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http: https: 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; media-src *; img-src 'self' data: content:; font-src 'self' data: http:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <title>
+    Point of Sales
+  </title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- loader -->
+  <div id="loader">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+  <!-- * loader -->
+
+  <!-- App Header -->
+  <div class="appHeader bg-primary text-light">
+    <div class="left">
+      <a href="master-supplier.html" class="headerButton">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </a>
+    </div>
+    <div class="pageTitle">
+      Tambah Supplier
+    </div>
+  </div>
+  <!-- * App Header -->
+
+  <!-- App Capsule -->
+  <div id="appCapsule">
+    <div class="section full">
+      <div class="wide-block pb-1 pt-2">
+        <form action="#" autocomplete="off" class="needs-validation" novalidate>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="kode_supplier">Kode Supplier</label>
+              <input type="text" class="form-control" id="kode_supplier" name="kode_supplier" placeholder="Kode Supplier" required>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Kode Supplier</div>
+            </div>
+          </div>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="nama_supplier">Nama Supplier</label>
+              <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Nama Supplier" required>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Nama Supplier</div>
+            </div>
+          </div>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="alamat">Alamat</label>
+              <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+            </div>
+          </div>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="telepon">Telepon</label>
+              <input type="text" class="form-control" id="telepon" name="telepon" placeholder="Telepon">
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+            </div>
+          </div>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Format Email tidak sesuai</div>
+            </div>
+          </div>
+
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <button type="submit" class="btn btn-primary mr-1 mb-1">
+                <ion-icon name="checkmark-outline"></ion-icon>
+                Simpan
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <!-- * App Capsule -->
+
+  <!-- App Bottom Menu -->
+  <div id="bottom-menu-here"></div>
+  <!-- * App Bottom Menu -->
+
+  <!-- App Sidebar -->
+  <div id="sidebar-here"></div>
+  <!-- * App Sidebar -->
+
+  <!-- Dialog Basic -->
+  <div class="modal fade dialogbox" id="modalLogout" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log Out</h5>
+        </div>
+        <div class="modal-body">
+          Apakah yakin akan log out ?
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn btn-text-secondary" data-dismiss="modal">Tidak</a>
+            <a href="#" class="btn btn-text-primary" id="btn-confirm-logout">Ya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Dialog Basic -->
+
+  <!-- DialogIconedDanger -->
+  <div class="modal fade dialogbox" id="DialogIconedDanger" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-icon text-danger">
+          <ion-icon name="close-circle"></ion-icon>
+        </div>
+        <div class="modal-header">
+          <h5 class="modal-title">Error</h5>
+        </div>
+        <div class="modal-body">
+          <span id="error-message"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn" data-dismiss="modal">CLOSE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * DialogIconedDanger -->
+
+  <script src="cordova.js"></script>
+  <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/lib/popper.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+  <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+  <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+  <script src="assets/js/base.js"></script>
+  <script src="assets/js/static.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/module.js"></script>
+  <script src="assets/js/pages/supplier/form.js"></script>
+</body>
+</html>
