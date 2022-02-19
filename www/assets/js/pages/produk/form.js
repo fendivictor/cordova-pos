@@ -6,8 +6,6 @@ let currentKodeSelected = module.readUrlParameter("kode");
 const formProduk = {
   init: function() {
     module.loadSidebar();
-    formProduk.loadKategori();
-    formProduk.loadSatuan();
   },
 
   loadKategori: function() {
@@ -62,6 +60,7 @@ const formProduk = {
 
   onEdit: function() {
     if (currentAction == "edit") {
+      $(".pageTitle").html("Edit Produk");
       $.get(`${apiUrl}api/Produk/find?kode=${currentKodeSelected}&id_perusahaan=${idPerusahaan}`)
       .done(function(data) {
         if (data.metadata.status != 200) {
@@ -123,7 +122,7 @@ $(function() {
       formData.append("satuan", satuan);
 
       if (currentAction == 'edit') {
-        formData.append("id", currentIdSelected);
+        formData.append("kode", currentKodeSelected);
       }
 
       formProduk.onSubmitForm(formData);
@@ -131,5 +130,11 @@ $(function() {
     }, false);
   });
 
-  formProduk.onEdit();
+  formProduk.loadKategori();
+  formProduk.loadSatuan();
+
+  setTimeout(
+    formProduk.onEdit,
+    1000
+  );
 });

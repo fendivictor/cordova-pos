@@ -21,32 +21,57 @@
   <!-- App Header -->
   <div class="appHeader bg-primary text-light">
     <div class="left">
-      <a href="product.html" class="headerButton">
+      <a href="toko.html" class="headerButton">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </a>
     </div>
     <div class="pageTitle">
-      Master Produk
+      Tambah Toko
     </div>
   </div>
   <!-- * App Header -->
 
   <!-- App Capsule -->
   <div id="appCapsule">
-    <div class="header-large-title mt-3">
-      <h1 class="title">Master Produk</h1>
-    </div>
-    <div class="section full mt-2">
-      <ul class="listview link-listview">
-        <li><a href="#">Link Item 1</a></li>
-      </ul>
-    </div>
+    <div class="section full">
+      <div class="wide-block pb-1 pt-2">
+        <form action="#" autocomplete="off" class="needs-validation" novalidate>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="toko">Nama Toko</label>
+              <input type="text" class="form-control" id="toko" name="toko" placeholder="Nama Toko" required>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Nama Toko</div>
+            </div>
+          </div>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <label class="label" for="alamat">Alamat Toko</label>
+              <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat Toko" required>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Masukkan Alamat Toko</div>
+            </div>
+          </div>
 
-    <div class="fab-button animate bottom-right dropdown">
-      <a href="form-produk.html" class="fab">
-        <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
-      </a>
+          <div class="form-group basic animated">
+            <div class="input-wrapper">
+              <button type="submit" class="btn btn-primary mr-1 mb-1">
+                <ion-icon name="checkmark-outline"></ion-icon>
+                Simpan
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+
   </div>
   <!-- * App Capsule -->
 
@@ -79,68 +104,6 @@
   </div>
   <!-- * Dialog Basic -->
 
-  <div class="modal fade action-sheet" id="actionSheet" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">
-            Action
-          </h5>
-        </div>
-        <div class="modal-body">
-          <ul class="action-button-list">
-            <li>
-              <a href="#" class="btn btn-list btn-edit" data-dismiss="modal">
-                <span>
-                  <ion-icon name="create-outline"></ion-icon>
-                  Edit
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="btn btn-list btn-delete" data-dismiss="modal">
-                <span>
-                  <ion-icon name="trash-outline"></ion-icon>
-                  Delete
-                </span>
-              </a>
-            </li>
-            <li class="action-divider"></li>
-            <li>
-              <a href="#" class="btn btn-list text-danger" data-dismiss="modal">
-                <span>
-                  <ion-icon name="close-outline"></ion-icon>
-                  Close
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Dialog Basic -->
-  <div class="modal fade dialogbox" id="modalDelete" data-backdrop="static" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Hapus Data</h5>
-        </div>
-        <div class="modal-body">
-          Apakah yakin akan menghapus data ?
-        </div>
-        <div class="modal-footer">
-          <div class="btn-inline">
-            <a href="#" class="btn btn-text-secondary" data-dismiss="modal">Tidak</a>
-            <a href="#" class="btn btn-text-primary" id="btn-confirm-delete">Ya</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- * Dialog Basic -->
-
   <!-- DialogIconedDanger -->
   <div class="modal fade dialogbox" id="DialogIconedDanger" data-backdrop="static" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -164,15 +127,6 @@
   </div>
   <!-- * DialogIconedDanger -->
 
-  <div id="toast-success" class="toast-box toast-top bg-success">
-    <div class="in">
-      <div id="success-text" class="text">
-          Success Color
-      </div>
-    </div>
-    <button type="button" class="btn btn-sm btn-text-light close-button">OK</button>
-  </div>
-
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/popper.min.js"></script>
@@ -184,6 +138,6 @@
   <script src="assets/js/static.js"></script>
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/module.js"></script>
-  <script src="assets/js/pages/produk/index.js"></script>
+  <script src="assets/js/pages/toko/form.js"></script>
 </body>
 </html>

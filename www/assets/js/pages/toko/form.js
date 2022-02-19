@@ -3,15 +3,16 @@ let username = auth.getCookie("username");
 let currentAction = module.readUrlParameter("action");
 let currentIdSelected = module.readUrlParameter("id");
 
-const formKategori = {
+const formToko = {
   init: function() {
     module.loadSidebar();
+    // module.loadBottomMenu('satuan.html');
   },
 
   onEdit: function() {
     if (currentAction == "edit") {
-      $(".pageTitle").html("Edit Kategori");
-      $.get(`${apiUrl}api/master/Kategori/find/${currentIdSelected}?id_perusahaan=${idPerusahaan}`)
+      $(".pageTitle").html("Edit Toko");
+      $.get(`${apiUrl}api/Toko/find/${currentIdSelected}?id_perusahaan=${idPerusahaan}`)
       .done(function(data) {
         if (data.metadata.status != 200) {
           $("#DialogIconedDanger").modal("show");
@@ -19,7 +20,8 @@ const formKategori = {
           return false;
         }
 
-        $("#kategori").val(data.response.kategori);
+        $("#toko").val(data.response.nama_toko);
+        $("#alamat").val(data.response.alamat);
       });
     }
   },
@@ -27,7 +29,7 @@ const formKategori = {
   onSubmitForm: function(formData) {
     module.blockUI();
     module.ajaxSubmitData(
-      currentAction == 'edit' ? `${apiUrl}api/master/Kategori/update` : `${apiUrl}api/master/Kategori/add`,
+      currentAction == 'edit' ? `${apiUrl}api/Toko/update` : `${apiUrl}api/Toko/add`,
       formData, 
       function(data) {
         module.unblockUI();
@@ -38,17 +40,17 @@ const formKategori = {
           return false;
         }
 
-        window.location.href = "master-kategori.html";
+        window.location.href = "toko.html";
       });
   },
   
   onBackKeyDown: function() {
-    window.location.href = "master-kategori.html";
+    window.location.href = "toko.html";
   }
 }
 
-document.addEventListener('deviceready', formKategori.init, false);
-document.addEventListener("backbutton", formKategori.onBackKeyDown, false); 
+document.addEventListener('deviceready', formToko.init, false);
+document.addEventListener("backbutton", formToko.onBackKeyDown, false); 
 
 // Event
 $(function() {
@@ -64,21 +66,23 @@ $(function() {
         return false;
       }
 
-      let kategori = $("#kategori").val();
+      let toko = $("#toko").val();
+      let alamat = $("#alamat").val();
 
       let formData = new FormData();
       formData.append("id_perusahaan", idPerusahaan);
-      formData.append("kategori", kategori);
+      formData.append("nama_toko", toko);
+      formData.append("alamat", alamat);
       formData.append("username", username);
 
       if (currentAction == 'edit') {
         formData.append("id", currentIdSelected);
       }
 
-      formKategori.onSubmitForm(formData);
+      formToko.onSubmitForm(formData);
 
     }, false);
   });
 
-  formKategori.onEdit();
+  formToko.onEdit();
 });

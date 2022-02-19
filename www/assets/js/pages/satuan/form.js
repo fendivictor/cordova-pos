@@ -11,6 +11,7 @@ const formSatuan = {
 
   onEdit: function() {
     if (currentAction == "edit") {
+      $(".pageTitle").html("Edit Satuan");
       $.get(`${apiUrl}api/master/Satuan/find/${currentIdSelected}?id_perusahaan=${idPerusahaan}`)
       .done(function(data) {
         if (data.metadata.status != 200) {

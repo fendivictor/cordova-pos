@@ -4,13 +4,13 @@ let state = {
   selectedId: null
 }
 
-const masterKategori = {
+const masterToko = {
   init: function() {
     module.loadSidebar();
   },
   
   loadData: function() {
-    $.get(`${apiUrl}api/master/Kategori/find?id_perusahaan=${idPerusahaan}`)
+    $.get(`${apiUrl}api/Toko/find?id_perusahaan=${idPerusahaan}`)
     .done(function(data) {
       $(".listview").html(null);
 
@@ -23,7 +23,7 @@ const masterKategori = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-id="${val.id}" class="btn-tools">${val.kategori}</a></li>`);
+        $(".listview").append(`<li><a href="#" data-id="${val.id}" class="btn-tools">${val.nama_toko}</a></li>`);
       });
     });
   },
@@ -32,11 +32,11 @@ const masterKategori = {
     module.blockUI();
 
     module.ajaxSubmitData(
-      `${apiUrl}api/master/Kategori/remove/`,
+      `${apiUrl}api/Toko/remove/`,
       formData,
       function(data) {
         module.unblockUI();
-        masterKategori.loadData();
+        masterToko.loadData();
 
         if (data.metadata.status != 200) {
           $("#DialogIconedDanger").modal("show");
@@ -50,16 +50,16 @@ const masterKategori = {
   },
 
   onBackKeyDown: function() {
-    window.location.href = "product.html";
+    window.location.href = "dashboard.html";
   }
 }
 
-document.addEventListener('deviceready', masterKategori.init, false);
-document.addEventListener("backbutton", masterKategori.onBackKeyDown, false); 
+document.addEventListener('deviceready', masterToko.init, false);
+document.addEventListener("backbutton", masterToko.onBackKeyDown, false); 
 
 // Event
 $(function() {
-  masterKategori.loadData();
+  masterToko.loadData();
 });
 
 $(document).on("click", ".btn-tools", function() {
@@ -76,7 +76,7 @@ $(document).on("click", ".btn-edit", function() {
     return false;
   }
 
-  window.location.href = `form-kategori.html?id=${state.selectedId}&action=edit`;
+  window.location.href = `form-toko.html?id=${state.selectedId}&action=edit`;
 });
 
 $(document).on("click", ".btn-delete", function() {
@@ -97,5 +97,5 @@ $("#btn-confirm-delete").click(function() {
   formData.append("id_perusahaan", idPerusahaan);
   formData.append("username", username);
 
-  masterKategori.removeData(formData);
+  masterToko.removeData(formData);
 });
