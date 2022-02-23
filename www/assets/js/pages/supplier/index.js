@@ -24,7 +24,7 @@ const masterSupplier = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-kode="${val.kode}" class="btn-tools">${val.nama_supplier}</a></li>`);
+        $(".listview").append(`<li><a href="#" data-kode="${val.kode}" class="btn-tools">${val.kode} - ${val.nama_supplier}</a></li>`);
       });
     });
   },
