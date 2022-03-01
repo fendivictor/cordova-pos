@@ -1,13 +1,13 @@
 let idPerusahaan = auth.getCookie("id_perusahaan");
 let username = auth.getCookie("username");
 
-const penerimaan = {
+const stokProduk = {
   init: function() {
     module.loadSidebar();
   },
-
+  
   loadData: function() {
-    $.get(`${apiUrl}api/Penerimaan/showPenerimaan?id_perusahaan=${idPerusahaan}`)
+    $.get(`${apiUrl}api/Stok/find?id_perusahaan=${idPerusahaan}`)
     .done(function(data) {
       $(".listview").html(null);
 
@@ -25,9 +25,9 @@ const penerimaan = {
           <a href="#" class="item">
             <div class="in">
               <div>
-                <header>${val.nama_toko}</header>
-                ${val.nama_supplier}
-                <footer>${moment(val.insert_at).format("DD/MM/YYYY HH:mm")}</footer>
+                <header>${val.kode}</header>
+                ${val.nama}
+                <footer>${val.qty} ${val.satuan}</footer>
               </div>
             </div>
           </a>
@@ -41,10 +41,10 @@ const penerimaan = {
   }
 }
 
-document.addEventListener('deviceready', penerimaan.init, false);
-document.addEventListener("backbutton", penerimaan.onBackKeyDown, false); 
+document.addEventListener('deviceready', stokProduk.init, false);
+document.addEventListener("backbutton", stokProduk.onBackKeyDown, false); 
 
 // Event
 $(function() {
-  penerimaan.loadData();
+  stokProduk.loadData();
 });

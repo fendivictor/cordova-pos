@@ -37,7 +37,7 @@
       <h1 class="title">Penerimaan Barang</h1>
     </div>
     <div class="section full mt-2">
-      <ul class="listview link-listview">
+      <ul class="listview link-listview cart-listview">
         <li><a href="#">Belum ada Produk ditambahkan</a></li>
       </ul>
     </div>
@@ -48,6 +48,14 @@
           <button type="button" class="btn btn-primary mr-1 mb-1" id="btn-open-modal">
             <ion-icon name="add-circle-outline"></ion-icon>
             Tambahkan Produk
+          </button>
+        </div>
+      </div>
+      <div class="form-group basic animated">
+        <div class="input-wrapper">
+          <button type="button" class="btn btn-success mr-1 mb-1" id="btn-create-penerimaan">
+            <ion-icon name="checkmark-outline"></ion-icon>
+            Buat Penerimaan
           </button>
         </div>
       </div>
@@ -143,6 +151,181 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Form -->
+
+  <div class="modal fade action-sheet" id="actionSheet" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Action
+          </h5>
+        </div>
+        <div class="modal-body">
+          <ul class="action-button-list">
+            <li>
+              <a href="#" class="btn btn-list btn-edit" data-dismiss="modal">
+                <span>
+                  <ion-icon name="create-outline"></ion-icon>
+                  Edit
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-list btn-delete" data-dismiss="modal">
+                <span>
+                  <ion-icon name="trash-outline"></ion-icon>
+                  Delete
+                </span>
+              </a>
+            </li>
+            <li class="action-divider"></li>
+            <li>
+              <a href="#" class="btn btn-list text-danger" data-dismiss="modal">
+                <span>
+                  <ion-icon name="close-outline"></ion-icon>
+                  Close
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog Basic -->
+  <div class="modal fade dialogbox" id="modalDelete" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hapus Data</h5>
+        </div>
+        <div class="modal-body">
+          Apakah yakin akan menghapus data ?
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="#" class="btn btn-text-secondary" data-dismiss="modal">Tidak</a>
+            <a href="#" class="btn btn-text-primary" id="btn-confirm-delete">Ya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Dialog Basic -->
+
+  <!-- Dialog Form -->
+  <div class="modal fade dialogbox" id="DialogForm" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Data</h5>
+        </div>
+        <form>
+          <div class="modal-body text-left mb-2">
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="item">Produk</label>
+                <input type="text" class="form-control" id="item" placeholder="" readonly>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="qty">Qty</label>
+                <input type="number" class="form-control" id="qty" placeholder="">
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-inline">
+              <button type="button" class="btn btn-text-secondary" data-dismiss="modal">CLOSE</button>
+              <button type="button" id="btn-update-cart" class="btn btn-text-primary" data-dismiss="modal">SIMPAN</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- * Dialog Form -->
+
+  <!-- Modal Form -->
+  <div class="modal fade modalbox" id="ModalPenerimaan" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Buat Penerimaan</h5>
+          <a href="javascript:;" data-dismiss="modal">Close</a>
+        </div>
+        <div class="modal-body">
+          <form id="form-penerimaan" action="#" autocomplete="off" class="needs-validation" novalidate>
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <label class="label" for="nonota">Nomor Nota<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="nonota" id="nonota" placeholder="Nomor Nota" required>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Masukkan Nomor Nota</div>
+              </div>
+            </div>
+      
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <label class="label" for="supplier">Supplier</label>
+                <select name="supplier" id="supplier" class="form-control" required></select>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Masukkan Supplier</div>
+              </div>
+            </div>
+
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <label class="label" for="lokasi">Toko</label>
+                <select name="lokasi" id="lokasi" class="form-control" required></select>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Masukkan Toko</div>
+              </div>
+            </div>
+      
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <label class="label" for="catatan">Catatan</label>
+                <input type="text" class="form-control" id="catatan" name="catatan" placeholder="Catatan">
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Masukkan Catatan</div>
+              </div>
+            </div>
+      
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <button type="submit" class="btn btn-primary mr-1 mb-1">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
