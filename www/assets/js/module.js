@@ -122,5 +122,9 @@ const module = {
     let params = url.searchParams.get(getParams);
 
     return params;
+  },
+
+  numberWithCommas: function(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }

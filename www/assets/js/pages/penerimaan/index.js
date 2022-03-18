@@ -13,7 +13,13 @@ const penerimaan = {
 
       if (data.metadata.status != 200) {
         $(".listview").html(`
-          <li><a href="#">Data tidak ditemukan</a></li>
+          <li>
+            <a href="#" class="item">
+              <div class="in">
+                <div>Data tidak ditemukan</div>
+              </div>
+            </a>
+          </li>
         `);
 
         return false;

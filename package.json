@@ -16,6 +16,7 @@
     "cordova-android": "^9.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-electron": "^1.1.1",
+    "cordova-ios": "^6.2.0",
     "cordova-plugin-cookie-manager": "git+https://github.com/teunsteenbekkers/cordova-plugin-cookie-manager.git",
     "cordova-plugin-whitelist": "^1.3.5"
   },
@@ -27,7 +28,8 @@
     "platforms": [
       "browser",
       "electron",
-      "android"
+      "android",
+      "ios"
     ]
   },
   "dependencies": {

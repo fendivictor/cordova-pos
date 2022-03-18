@@ -93,6 +93,10 @@ const core = {
   unBlockUI: function() {
     $.unblockUI();
   },
+
+  numberWithCommas: function() {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }
 
 document.addEventListener('deviceready', core.init, false);
