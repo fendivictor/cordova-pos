@@ -1,3 +1,0 @@
-let state = {
-  isAuthenticated: false
-}

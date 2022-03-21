@@ -11,7 +11,7 @@
   </title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-white">
   <!-- loader -->
   <div id="loader">
     <div class="spinner-border text-primary" role="status"></div>
@@ -35,76 +35,42 @@
   <div id="appCapsule">
 
     <div class="header-large-title">
-      <h1 class="title">Discover</h1>
-      <h4 class="subtitle">Welcome to Mobilekit</h4>
+      <h1 class="title">Dashboard</h1>
+      <h4 class="subtitle">Selamat Datang di Cuan POS</h4>
     </div>
 
-    <div class="section mt-3 mb-3">
-      <div class="card">
-        <img src="assets/img/sample/photo/wide4.jpg" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h6 class="card-subtitle">Discover</h6>
-          <h5 class="card-title">Components</h5>
-          <p class="card-text">
-            Reusable components designed for the mobile interface and ready to use.
-          </p>
-          <a href="app-components.html" class="btn btn-primary">
-            <ion-icon name="cube-outline"></ion-icon>
-            Preview
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="section mt-3 mb-3">
-      <div class="card">
-        <img src="assets/img/sample/photo/wide2.jpg" class="card-img-top" alt="image">
-        <div class="card-body">
-          <h6 class="card-subtitle">Discover</h6>
-          <h5 class="card-title">Pages</h5>
-          <p class="card-text">
-            Mobilekit comes with basic pages you may need and use in your projects easily.
-          </p>
-          <a href="app-pages.html" class="btn btn-primary">
-            <ion-icon name="layers-outline"></ion-icon>
-            Preview
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- app footer -->
-    <div class="appFooter">
-      <img src="assets/img/logo.png" alt="icon" class="footer-logo mb-2">
-      <div class="footer-title">
-        Copyright © Mobilekit 2020. All Rights Reserved.
-      </div>
-      <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
-      Great way to start your mobile websites and pwa projects.
-
-      <div class="mt-2">
-        <a href="javascript:;" class="btn btn-icon btn-sm btn-facebook">
-          <ion-icon name="logo-facebook"></ion-icon>
+    <ul class="listview image-listview flush transparent mt-4">
+      <li>
+        <a href="form-transaksi.html" class="item">
+          <div class="icon-box bg-primary">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+          <div class="in">
+            Buat Transaksi Baru
+          </div>
         </a>
-        <a href="javascript:;" class="btn btn-icon btn-sm btn-twitter">
-          <ion-icon name="logo-twitter"></ion-icon>
+      </li>
+      <li>
+        <a href="history-transaksi.html" class="item">
+          <div class="icon-box bg-primary">
+            <ion-icon name="document-outline"></ion-icon>
+          </div>
+          <div class="in">
+            Transaksi Terbaru
+          </div>
         </a>
-        <a href="javascript:;" class="btn btn-icon btn-sm btn-linkedin">
-          <ion-icon name="logo-linkedin"></ion-icon>
+      </li>
+      <li>
+        <a href="stok-produk.html" class="item">
+          <div class="icon-box bg-primary">
+            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+          </div>
+          <div class="in">
+            Stok Produk
+          </div>
         </a>
-        <a href="javascript:;" class="btn btn-icon btn-sm btn-instagram">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-        <a href="javascript:;" class="btn btn-icon btn-sm btn-whatsapp">
-          <ion-icon name="logo-whatsapp"></ion-icon>
-        </a>
-        <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
-          <ion-icon name="arrow-up-outline"></ion-icon>
-        </a>
-      </div>
-    </div>
-    <!-- * app footer -->
+      </li>
+    </ul>
 
   </div>
   <!-- * App Capsule -->

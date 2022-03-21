@@ -10,10 +10,10 @@ const transaksi = {
   loadData: function() {
     $.get(`${apiUrl}api/Transaksi/showTransaksi?id_perusahaan=${idPerusahaan}`)
     .done(function(data) {
-      $(".listview").html(null);
+      $(".tr-listview").html(null);
 
       if (data.metadata.status != 200) {
-        $(".listview").html(`
+        $(".tr-listview").html(`
           <li>
             <a href="#" class="item">
               <div class="in">
@@ -27,7 +27,7 @@ const transaksi = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`
+        $(".tr-listview").append(`
         <li>
           <a href="#" class="item">
             <div class="in">
