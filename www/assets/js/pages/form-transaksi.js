@@ -162,10 +162,15 @@ const formTransaksi = {
     jumlahBayar = (parseFloat(jumlahBayar) - parseFloat(diskon));
 
     let selisih = parseFloat(jumlahBayar) - parseFloat(totalTagihan);
+
+    $("#btn-info-transaksi").attr("href", "history-transaksi.html");
     
     if (selisih < 0) {
       $("#kekurangan").val(selisih * -1);
       $("#kembalian").val(0);
+
+      $("#btn-info-transaksi").attr("href", "transaksi.html");
+
     } else if (selisih > 0) {
       $("#kekurangan").val(0);
       $("#kembalian").val(selisih);
@@ -309,6 +314,7 @@ $("#btn-create-transaksi").click(function() {
   })
   .done(function(data) {
     $("#total-tagihan").val(data.response.total);
+    $("#bayar").val(data.response.total);
     formTransaksi.hitungTagihan();
   });
 });

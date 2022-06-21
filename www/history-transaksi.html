@@ -10,6 +10,7 @@
     Point of Sales
   </title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/js/plugins/daterangepicker/daterangepicker.css">
 </head>
 <body>
   <!-- loader -->
@@ -36,19 +37,34 @@
     <div class="header-large-title mt-3">
       <h1 class="title">History Transaksi</h1>
     </div>
-    <ul class="history-listview listview image-listview mt-2">
-      <li>
-        <a href="#" class="item">
-          <div class="in">
-            <div>
-              <header>Name</header>
-              Juan Esteban Sarmiento
-              <footer>California</footer>
+    <div class="section full mt-2 mb-2">
+      <div class="wide-block pb-1 pt-1">
+        <form>
+          <div class="form-group basic">
+            <div class="input-wrapper">
+              <label class="label" for="tanggal-transaksi">Tanggal Transaksi</label>
+              <input type="text" class="form-control" id="tanggal-transaksi" placeholder="Pilih Tanggal Transaksi" readonly>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
             </div>
           </div>
-        </a>
-      </li>
-    </ul>
+        </form>
+      </div>
+      <ul class="history-listview listview image-listview mt-2">
+        <li>
+          <a href="#" class="item">
+            <div class="in">
+              <div>
+                <header>Name</header>
+                Juan Esteban Sarmiento
+                <footer>California</footer>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
   <!-- * App Capsule -->
 
@@ -81,6 +97,92 @@
   </div>
   <!-- * Dialog Basic -->
 
+  <div class="modal fade action-sheet" id="actionSheet" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Action
+          </h5>
+        </div>
+        <div class="modal-body">
+          <ul class="action-button-list">
+            <li>
+              <a href="#" class="btn btn-list btn-detail" data-dismiss="modal">
+                <span>
+                  <ion-icon name="list-outline"></ion-icon>
+                  Lihat Detail
+                </span>
+              </a>
+            </li>
+            <li class="action-divider"></li>
+            <li>
+              <a href="#" class="btn btn-list text-danger" data-dismiss="modal">
+                <span>
+                  <ion-icon name="close-outline"></ion-icon>
+                  Close
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Form -->
+  <div class="modal fade modalbox" id="ModalDetail" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detail Transaksi</h5>
+          <a href="javascript:;" data-dismiss="modal">Close</a>
+        </div>
+        <div class="modal-body">
+          <form id="form-transaksi" action="#" autocomplete="off" class="needs-validation" novalidate>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Nomor Bukti</label>
+                <span id="text-nobukti"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Tanggal Transaksi</label>
+                <span id="text-tgl"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Toko</label>
+                <span id="text-toko"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Customer</label>
+                <span id="text-customer"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Total</label>
+                <span id="text-total"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Item</label>
+                <div id="text-item"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Form -->
+
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/popper.min.js"></script>
@@ -94,5 +196,6 @@
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/module.js"></script>
   <script src="assets/js/pages/history-transaksi.js"></script>
+  <script src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
 </body>
 </html>

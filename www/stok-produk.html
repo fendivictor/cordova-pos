@@ -10,6 +10,7 @@
     Point of Sales
   </title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/js/plugins/daterangepicker/daterangepicker.css">
 </head>
 <body>
   <!-- loader -->
@@ -37,6 +38,24 @@
       <h1 class="title">Stok Produk</h1>
     </div>
     <div class="section full mt-2">
+      <div class="wide-block pb-1 pt-1">
+        <form>
+          <div class="form-group basic animated text-right">
+            <div class="input-wrapper">
+              <button type="button" id="download-kartu-stok" class="btn btn-success mr-1 mb-1">
+                <ion-icon name="checkmark-outline"></ion-icon>
+                Download Kartu stok
+              </button>
+            </div>
+          </div>
+          <div class="form-group basic">
+            <div class="input-wrapper">
+              <label class="label" for="lokasi">Toko</label>
+              <select name="lokasi" id="lokasi" class="form-control" required></select>
+            </div>
+          </div>
+        </form>
+      </div>
       <ul class="listview link-listview">
         <li><a href="#">Link Item 1</a></li>
       </ul>
@@ -72,6 +91,49 @@
     </div>
   </div>
   <!-- * Dialog Basic -->
+
+  <!-- Modal Form -->
+  <div class="modal fade dialogbox" id="ModalKartuStok" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Download Kartu Stok</h5>
+          <a href="javascript:;" data-dismiss="modal">Close</a>
+        </div>
+        <div class="modal-body">
+          <form id="form-kartu-stok" action="#" autocomplete="off" class="needs-validation" novalidate>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="tanggal-mutasi-awal">Tanggal Awal</label>
+                <input type="text" class="form-control" id="tanggal-mutasi-awal" placeholder="Pilih Tanggal" readonly>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="tanggal-mutasi-akhir">Tanggal Akhir</label>
+                <input type="text" class="form-control" id="tanggal-mutasi-akhir" placeholder="Pilih Tanggal" readonly>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+            <div class="form-group basic animated">
+              <div class="input-wrapper">
+                <button type="submit" class="btn btn-success mr-1 mb-1">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                  Download
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Form -->
 
   <div class="modal fade action-sheet" id="actionSheet" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -174,10 +236,12 @@
   <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
   <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
   <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+  <script src="assets/js/plugins/moment/moment.min.js"></script>
   <script src="assets/js/base.js"></script>
   <script src="assets/js/static.js"></script>
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/module.js"></script>
   <script src="assets/js/pages/stok-produk.js"></script>
+  <script src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
 </body>
 </html>

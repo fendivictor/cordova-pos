@@ -114,7 +114,7 @@ const module = {
   unblockUI: function() {
     setTimeout(() => {
       $("#loader").fadeToggle(250);
-    }, 700); // hide delay when page load
+    }, 500); // hide delay when page load
   },
 
   readUrlParameter: function(getParams) {

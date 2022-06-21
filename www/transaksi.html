@@ -101,15 +101,15 @@
               <a href="#" class="btn btn-list btn-edit" data-dismiss="modal">
                 <span>
                   <ion-icon name="create-outline"></ion-icon>
-                  Edit
+                  Bayar
                 </span>
               </a>
             </li>
             <li>
-              <a href="#" class="btn btn-list btn-delete" data-dismiss="modal">
+              <a href="#" class="btn btn-list btn-detail" data-dismiss="modal">
                 <span>
-                  <ion-icon name="trash-outline"></ion-icon>
-                  Delete
+                  <ion-icon name="list-outline"></ion-icon>
+                  Lihat Detail
                 </span>
               </a>
             </li>
@@ -180,6 +180,122 @@
     </div>
     <button type="button" class="btn btn-sm btn-text-light close-button">OK</button>
   </div>
+
+  <!-- Dialog Form -->
+  <div class="modal fade dialogbox" id="DialogForm" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Data</h5>
+        </div>
+        <form>
+          <div class="modal-body text-left mb-2">
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="nobukti">Nobukti</label>
+                <input type="text" class="form-control" id="nobukti" placeholder="" readonly>
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label" for="jumlah_bayar">Jumlah Bayar</label>
+                <input type="number" class="form-control" id="jumlah_bayar" placeholder="">
+                <i class="clear-input">
+                  <ion-icon name="close-circle"></ion-icon>
+                </i>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-inline">
+              <button type="button" class="btn btn-text-secondary" data-dismiss="modal">CLOSE</button>
+              <button type="button" id="btn-update-transaksi" class="btn btn-text-primary" data-dismiss="modal">SIMPAN</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- * Dialog Form -->
+
+  <!-- DialogInfo -->
+  <div class="modal fade dialogbox" id="DialogInfo" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-icon text-success">
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="modal-header">
+          <h5 class="modal-title">Info</h5>
+        </div>
+        <div class="modal-body">
+          <span id="info-message"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-inline">
+            <a href="transaksi.html" class="btn">CLOSE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * DialogInfo -->
+
+  <!-- Modal Form -->
+  <div class="modal fade modalbox" id="ModalDetail" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detail Transaksi</h5>
+          <a href="javascript:;" data-dismiss="modal">Close</a>
+        </div>
+        <div class="modal-body">
+          <form id="form-transaksi" action="#" autocomplete="off" class="needs-validation" novalidate>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Nomor Bukti</label>
+                <span id="text-nobukti"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Tanggal Transaksi</label>
+                <span id="text-tgl"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Toko</label>
+                <span id="text-toko"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Customer</label>
+                <span id="text-customer"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Total</label>
+                <span id="text-total"></span>
+              </div>
+            </div>
+            <div class="form-group basic">
+              <div class="input-wrapper">
+                <label class="label">Item</label>
+                <div id="text-item"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Form -->
 
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
