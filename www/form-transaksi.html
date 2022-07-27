@@ -49,7 +49,7 @@
           <div class="form-group basic">
             <div class="input-wrapper">
               <label class="label" for="customer">Customer</label>
-              <input type="text" class="form-control" name="customer" id="customer" value="Walk-In Customer" required>
+              <input type="text" class="form-control" name="customer" id="customer" value="Umum" required>
             </div>
           </div>
         </form>
@@ -355,12 +355,38 @@
         <div class="modal-footer">
           <div class="btn-inline">
             <a href="transaksi.html" id="btn-info-transaksi" class="btn">CLOSE</a>
+            <button type="button" id="btn-cetak-transaksi" class="btn btn-text-primary" data-dismiss="modal">CETAK</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- * DialogInfo -->
+
+  <div class="modal fade action-sheet" id="actionBluetooth" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Action
+          </h5>
+        </div>
+        <div class="modal-body">
+          <ul class="action-button-list" id="list-devices">
+            <li class="action-divider"></li>
+            <li>
+              <a href="#" class="btn btn-list text-danger" data-dismiss="modal">
+                <span>
+                  <ion-icon name="close-outline"></ion-icon>
+                  Close
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="cordova.js"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
@@ -369,6 +395,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
   <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
   <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+  <script src="assets/js/plugins/moment/moment.min.js"></script>
   <script src="assets/js/base.js"></script>
   <script src="assets/js/static.js"></script>
   <script src="assets/js/auth.js"></script>

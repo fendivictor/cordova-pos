@@ -5,7 +5,9 @@ let state = {
   selectedId: null,
   produk: null,
   kode: null,
-  qty: 0
+  qty: 0,
+  selectedNobukti: null,
+  selectedDevice: null
 }
 
 const formTransaksi = {
@@ -355,6 +357,8 @@ $("#form-transaksi").submit(function(e) {
         return false;
       }
 
+      state.selectedNobukti = data.response.nobukti;
+
       $("#DialogInfo").modal("show");
       if (data.response.kekurangan > 0) {
         $("#info-message").html(`Terdapat kekurangan Bayar sejumlah Rp. ${module.numberWithCommas(data.response.kekurangan)}`);
@@ -370,4 +374,83 @@ $("#form-transaksi").submit(function(e) {
       return false;
     }
   );
+});
+
+$("#btn-cetak-transaksi").click(function() {
+  BTPrinter.connected(function(data){
+    if (data == 'false') {
+      BTPrinter.list(function(data){
+        $("#list-devices").html(null);
+        let listDevices = "";
+        data.forEach(function(val, i) {
+          if (i % 3 == 0 || i == 0) {
+            listDevices += `
+            <li>
+              <a href="#" class="btn btn-list btn-select-device" data-device="${val}" data-dismiss="modal">
+                <span>
+                  <ion-icon name="list-outline"></ion-icon>
+                  ${val}
+                </span>
+              </a>
+            </li>`;
+          }
+        });
+        $("#list-devices").append(listDevices);
+        $("#actionBluetooth").modal("show");
+      },function(err){
+        $("#DialogIconedDanger").modal("show");
+        $("#error-message").html("Gagal Mencari Printer");
+        return false;
+      });
+    } else {
+      module.blockUI();
+
+      $.get(`${apiUrl}api/Transaksi/detailTransaksi`, {
+        "id_perusahaan": idPerusahaan,
+        "nobukti": state.selectedNobukti
+      })
+      .done(function(data) {
+        module.unblockUI();
+
+        BTPrinter.printTextSizeAlign(null, null, data.response.header.nama_toko, 0, 1);
+        BTPrinter.printTextSizeAlign(null, null, data.response.header.nobukti, 1, 0);
+        BTPrinter.printTextSizeAlign(null, null, data.response.header.nama_customer, 1, 0);
+        BTPrinter.printTextSizeAlign(null, null, moment(data.response.header.tgl).format("DD/MM/YYYY"), 1, 0);  
+
+        let details = data.response.detail;
+        if (details.length > 0) {
+          details.forEach(function(val, i) {
+            BTPrinter.printTextSizeAlign(null, null, `${val.nama_barang}`, 1, 0);
+            BTPrinter.printTextSizeAlign(null, null, `(${val.qty} ${val.satuan}) x Rp. ${module.numberWithCommas(val.harga_jual)} = ${module.numberWithCommas(val.qty * val.harga_jual)}`, 1, 0);
+          });
+        }
+
+        BTPrinter.printTextSizeAlign(null, null, `Total: Rp. ${module.numberWithCommas(data.response.header.total)}`, 1, 0);
+        BTPrinter.printPOSCommand(null, null, "0C");
+        BTPrinter.printPOSCommand(null, null, "0C");
+        BTPrinter.printPOSCommand(null, null, "0C");
+
+        window.location.href = "transaksi.html";
+      })
+    }
+  },function(err){
+    $("#DialogIconedDanger").modal("show");
+    $("#error-message").html("Gagal Konek ke printer");
+    return false;
+  });
+});
+
+$(document).on("click", ".btn-select-device", function() {
+  let device = $(this).data("device");
+
+  state.selectedDevice = device;
+
+  BTPrinter.connect(function(data){
+    $("#DialogInfo").modal("show");
+    $("#info-message").html(`Berhasil Konek dengan Printer`);
+  },function(err){
+    $("#DialogIconedDanger").modal("show");
+    $("#error-message").html("Gagal Konek ke printer");
+    return false;
+  }, device);
 });
