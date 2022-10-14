@@ -28,7 +28,7 @@ const masterSupplier = {
           <li>
             <a href="#" data-kode="${val.kode}" class="item btn-tools">
               <div class="imageWrapper">
-                <img src="../assets/img/icon/right-chevron.png" alt="image" class="imaged w32">
+                <img src="assets/img/icon/right-chevron.png" alt="image" class="imaged w32">
               </div>
               <div class="in">
                 <div>

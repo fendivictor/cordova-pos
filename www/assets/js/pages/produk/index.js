@@ -27,7 +27,7 @@ const masterProduk = {
           <li>
             <a href="#" data-kode="${val.kode}" class="item btn-tools">
               <div class="imageWrapper">
-                <img src="../assets/img/icon/price-tag.png" alt="image" class="imaged w32">
+                <img src="assets/img/icon/price-tag.png" alt="image" class="imaged w32">
               </div>
               <div class="in">
                 <div>
