@@ -24,7 +24,21 @@ const masterSupplier = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-kode="${val.kode}" class="btn-tools">${val.kode} - ${val.nama_supplier}</a></li>`);
+        $(".listview").append(`
+          <li>
+            <a href="#" data-kode="${val.kode}" class="item btn-tools">
+              <div class="imageWrapper">
+                <img src="../assets/img/icon/right-chevron.png" alt="image" class="imaged w32">
+              </div>
+              <div class="in">
+                <div>
+                  ${val.nama_supplier} <br /><b>${val.telpon}</b>
+                  <div class="text-muted">${val.kode}</div>
+                  <div class="text-muted">${val.alamat}</div>
+                </div>
+              </div>
+            </a>
+          </li>`);
       });
     });
   },

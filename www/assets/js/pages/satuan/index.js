@@ -24,7 +24,19 @@ const masterSatuan = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-id="${val.id}" class="btn-tools">${val.satuan}</a></li>`);
+        $(".listview").append(`
+          <li>
+            <a href="#" data-id="${val.id}" class="item btn-tools">
+              <div class="imageWrapper">
+                <img src="../assets/img/icon/price-tag.png" alt="image" class="imaged w32">
+              </div>
+              <div class="in">
+                <div>
+                  ${val.satuan}
+                </div>
+              </div>
+            </a>
+          </li>`);
       });
     });
   },

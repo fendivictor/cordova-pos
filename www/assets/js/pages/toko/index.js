@@ -23,7 +23,20 @@ const masterToko = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-id="${val.id}" class="btn-tools">${val.nama_toko}</a></li>`);
+        $(".listview").append(`
+          <li>
+            <a href="#" data-id="${val.id}" class="item btn-tools">
+              <div class="imageWrapper">
+                <img src="../assets/img/icon/store.png" alt="image" class="imaged w32">
+              </div>
+              <div class="in">
+                <div>
+                  ${val.nama_toko}
+                  <div class="text-muted">${val.alamat}</div>
+                </div>
+              </div>
+            </a>
+          </li>`);
       });
     });
   },

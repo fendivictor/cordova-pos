@@ -10,6 +10,7 @@
     Point of Sales
   </title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/js/plugins/daterangepicker/daterangepicker.css">
 </head>
 <body>
   <!-- loader -->
@@ -36,19 +37,34 @@
     <div class="header-large-title mt-3">
       <h1 class="title">Penerimaan</h1>
     </div>
-    <ul class="listview image-listview mt-2">
-      <li>
-        <a href="#" class="item">
-          <div class="in">
-            <div>
-              <header>Name</header>
-              Juan Esteban Sarmiento
-              <footer>California</footer>
+    <div class="section full mt-2 mb-2">
+      <div class="wide-block pb-1 pt-1">
+        <form>
+          <div class="form-group basic">
+            <div class="input-wrapper">
+              <label class="label" for="tanggal-penerimaan">Tanggal Penerimaan</label>
+              <input type="text" class="form-control" id="tanggal-penerimaan" placeholder="Pilih Tanggal Penerimaan" readonly>
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
             </div>
           </div>
-        </a>
-      </li>
-    </ul>
+        </form>
+      </div>
+      <ul class="listview image-listview mt-2">
+        <li>
+          <a href="#" class="item">
+            <div class="in">
+              <div>
+                <header>Name</header>
+                Juan Esteban Sarmiento
+                <footer>California</footer>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="fab-button animate bottom-right dropdown">
       <a href="form-penerimaan.html" class="fab">
@@ -181,6 +197,7 @@
   <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
   <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
   <script src="assets/js/plugins/moment/moment.min.js"></script>
+  <script src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
   <script src="assets/js/base.js"></script>
   <script src="assets/js/static.js"></script>
   <script src="assets/js/auth.js"></script>

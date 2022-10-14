@@ -23,7 +23,20 @@ const masterProduk = {
       }
 
       data.response.forEach(function(val, i) {
-        $(".listview").append(`<li><a href="#" data-kode="${val.kode}" class="btn-tools">${val.kode} - ${val.nama}</a></li>`);
+        $(".listview").append(`
+          <li>
+            <a href="#" data-kode="${val.kode}" class="item btn-tools">
+              <div class="imageWrapper">
+                <img src="../assets/img/icon/price-tag.png" alt="image" class="imaged w32">
+              </div>
+              <div class="in">
+                <div>
+                  ${val.nama} <br /><b>Rp. ${module.numberWithCommas(val.harga_jual)}</b>
+                  <div class="text-muted">${val.kode}</div>
+                </div>
+              </div>
+            </a>
+          </li>`);
       }); 
     });
   },

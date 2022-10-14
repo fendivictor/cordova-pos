@@ -2,8 +2,8 @@
 // Page Loader with preload
 $(document).ready(function () {
     setTimeout(() => {
-        $("#loader").fadeToggle(250);
-    }, 700); // hide delay when page load
+        $("#loader").fadeToggle(100);
+    }, 100); // hide delay when page load
 });
 ///////////////////////////////////////////////////////////////////////////
 

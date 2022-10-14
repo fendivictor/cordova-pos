@@ -83,6 +83,11 @@ const module = {
         } else {
           $(".dark-mode-switch").attr('checked', false);
         }
+
+        $.get(`${apiUrl}api/Transaksi/showTransaksi?id_perusahaan=${usernameData.response.id_perusahaan}`)
+        .done(function(data) {
+          $(".total-pending").html(data.response.length);
+        });
       });
     });
   },
