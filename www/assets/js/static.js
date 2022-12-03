@@ -1,2 +1,2 @@
-const appVersion = '1.0.3';
-const apiUrl = 'https://fendivictor.xyz/api/pos/';
+const appVersion = '1.0.4';
+const apiUrl = 'https://demomediagudang.masuk.web.id/pos/';
